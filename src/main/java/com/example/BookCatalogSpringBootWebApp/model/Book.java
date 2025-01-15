@@ -20,11 +20,11 @@ public class Book {
         return id;
     }
 
-    public void setId(long id){
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return title;
     }
 
@@ -32,27 +32,27 @@ public class Book {
         this.title = title;
     }
 
-    public int getCategory(){
+    public int getCategory() {
         return category;
     }
 
-    public void setCategory(int category){
+    public void setCategory(int category) {
         this.category = category;
     }
 
-    public String getAuthor(){
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author){
+    public void setAuthor(String author) {
         this.author = author;
     }
 
-    public int getOwnership(){
+    public int getOwnership() {
         return ownership;
     }
 
-    public void setOwnership(int ownership){
+    public void setOwnership(int ownership) {
         this.ownership = ownership;
     }
 }
