@@ -1,4 +1,4 @@
-package com.example.BookCatalogSpringBootWebApp;
+package com.example.BookCatalogueSpringBootWebApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;	
 
 @SpringBootApplication
-public class BookCatalogSpringBootWebAppApplication {
+public class BookCatalogueSpringBootWebAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BookCatalogSpringBootWebAppApplication.class, args);
+		SpringApplication.run(BookCatalogueSpringBootWebAppApplication.class, args);
 	}
 
 }

@@ -1,10 +1,10 @@
-package com.example.BookCatalogSpringBootWebApp;
+package com.example.BookCatalogueSpringBootWebApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BookCatalogSpringBootWebAppApplicationTests {
+class BookCatalogueSpringBootWebAppApplicationTests {
 
 	@Test
 	void contextLoads() {

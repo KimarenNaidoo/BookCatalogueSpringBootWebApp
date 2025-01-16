@@ -1,4 +1,4 @@
-package com.example.BookCatalogSpringBootWebApp.model;
+package com.example.BookCatalogueSpringBootWebApp.model;
 
 public class Book {
 
