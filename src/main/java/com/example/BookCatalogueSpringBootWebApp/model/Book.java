@@ -4,13 +4,15 @@ public class Book {
 
     private long id;
     private String title;
+    private int statusId;
     private int category; //Enums
     private String author;
     private int ownership; // Enums
 
-    public Book (long id, String title, int category, String author, int ownership) {
+    public Book (long id, String title, int statusId, int category, String author, int ownership) {
         this.id = id; // Make this auto-incrememnt
         this.title = title;
+        this.statusId = statusId;
         this.category = category;
         this.author = author;
         this.ownership = ownership;
@@ -30,6 +32,14 @@ public class Book {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getStatusId() {
+        return statusId;
+    }
+
+    public void setStatusId(int statusId) {
+        this.statusId = statusId;
     }
 
     public int getCategory() {
