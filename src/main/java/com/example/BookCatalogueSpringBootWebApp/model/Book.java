@@ -6,7 +6,7 @@ public class Book {
     private String title;
     private int statusId;
     private int category; //Enums
-    private String author;
+    private String author; // Text seperated by , for multiple authors
     private int ownership; // Enums
 
     public Book (long id, String title, int statusId, int category, String author, int ownership) {
