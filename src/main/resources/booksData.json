@@ -1,0 +1,20 @@
+{
+    "books": [
+        {
+            "id": "1",
+            "title": "The Alchemist",
+            "statusId": "2",
+            "category": "0",
+            "author": "Paulo Coelho",
+            "ownership": "0"
+        },
+        {
+            "id": "2",
+            "title": "Life 3.0",
+            "statusId": "2",
+            "category": "1",
+            "author": "Max Tegmark",
+            "ownership": "3"
+        }
+    ]
+}
