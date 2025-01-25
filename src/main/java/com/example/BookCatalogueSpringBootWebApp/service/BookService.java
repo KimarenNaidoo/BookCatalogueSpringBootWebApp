@@ -28,7 +28,7 @@ public class BookService {
 
     private void loadBooksFromJson() {
         try {
-            ClassPathResource resource = new ClassPathResource("resources/booksData.json");
+            ClassPathResource resource = new ClassPathResource("booksData.json");
             String jsonContent = StreamUtils.copyToString(resource.getInputStream(), StandardCharsets.UTF_8);
             Map<String, List<Book>> booksMap = objectMapper.readValue(jsonContent, new TypeReference<Map<String, List<Book>>>() {}
             );

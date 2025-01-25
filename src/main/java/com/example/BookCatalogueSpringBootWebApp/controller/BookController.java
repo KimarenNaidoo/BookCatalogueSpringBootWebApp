@@ -19,14 +19,14 @@ public class BookController {
 	@Autowired
 	public BookService bookService;
 
-	@GetMapping("/")  // Responds to HTTP GET requests at the root URL
+	@GetMapping("/")
     public String getAllBooks() {
         List<Book> books = bookService.getAllBooks();
 		StringBuffer stringBuffer = new StringBuffer();
 		for (Book book : books)
 		{
 			stringBuffer.append(displayBookString(book));
-			stringBuffer.append('\n');
+			stringBuffer.append("<br>");
 		}
 
 		return stringBuffer.toString();
@@ -42,6 +42,6 @@ public class BookController {
 
 	public String displayBookString(Book book)
 	{
-		return book.toString();
+		return String.format("Book id: %d, title: %s, author: %s, category: %d, status: %d, ownership: %d.", book.getId(), book.getTitle(), book.getAuthor(), book.getCategory(), book.getStatusId(), book.getOwnership());
 	}
 }
