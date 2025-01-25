@@ -9,6 +9,11 @@ public class Book {
     private String author; // Text seperated by , for multiple authors
     private int ownershipId;
 
+    // Status
+    private final static int NOT_STARTED = 0;
+    private final static int READING = 1;
+    private final static int FINISHED = 2;
+
     // Category
     private final static int SELFIMPROVEMENT_PSYCHOLOGY = 0;
     private final static int SOFTWARE_TECHNOLOGY = 1;
@@ -91,16 +96,16 @@ public class Book {
                 return "Unown";
 
             case LENT:
-                return "Lent to...";    
+                return "Lent To...";    
 
             case BORROWED:
-                return "Borrowed from...";
+                return "Borrowed From...";
 
             case OWN:
                 return "Own";
 
             default:
-                return "Not available";
+                return "N/A";
         }
     }
 
@@ -131,11 +136,27 @@ public class Book {
                 return "Mystery/Spy/Detective";
         
             default:
-                return "Not available";
+                return "N/A";
+        }
+    }
+
+    public String getStatus() {
+        switch (this.statusId) {
+            case NOT_STARTED:
+                return "Not Started";
+            
+            case READING:
+                return "Reading";
+
+            case FINISHED:
+                return "Finished";
+        
+            default:
+                return "N/A";
         }
     }
 
     public String displayBookString() {
-		return String.format("Book id: %d, title: %s, author: %s, category: %s, status: %d, ownership: %s.", this.getId(), this.getTitle(), this.getAuthor(), this.getCategory(), this.getStatusId(), this.getOwnership());
+		return String.format("<h3>Book Id: %d</h3> <ul><li>Title: %s.</li> <li>Author: %s.</li> <li>Category: %s.</li> <li>Status: %s.</li> <li>Ownership: %s.</li></ul>", this.getId(), this.getTitle(), this.getAuthor(), this.getCategory(), this.getStatus(), this.getOwnership());
 	}
 }
