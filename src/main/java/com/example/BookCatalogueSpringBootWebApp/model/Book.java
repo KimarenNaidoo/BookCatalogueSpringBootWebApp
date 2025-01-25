@@ -9,6 +9,16 @@ public class Book {
     private String author; // Text seperated by , for multiple authors
     private int ownershipId;
 
+    // Category
+    private final static int SELFIMPROVEMENT_PSYCHOLOGY = 0;
+    private final static int SOFTWARE_TECHNOLOGY = 1;
+    private final static int ENGINEERING_PHYSICS = 2;
+    private final static int FICTION = 3;
+    private final static int ART = 4;
+    private final static int ROMANCE = 5;
+    private final static int HISTORY = 6;
+    private final static int MYSTERY_SPY_DETECTIVE = 7;
+
     // Ownership
     private final static int UNOWN = 0;
     private final static int LENT = 1;
@@ -75,39 +85,57 @@ public class Book {
     }
 
 
-    public String getOwnership(int ownership) {
-
-        String ownershipDisplayValue = "";
-
-        switch (ownership) {
+    public String getOwnership() {
+        switch (this.ownershipId) {
             case UNOWN:
-                ownershipDisplayValue = "Unown";
-                break;
+                return "Unown";
 
             case LENT:
-                ownershipDisplayValue = "Lent to...";
-                break;    
+                return "Lent to...";    
 
             case BORROWED:
-                ownershipDisplayValue = "Borrowed from...";
-                break;
+                return "Borrowed from...";
 
             case OWN:
-                ownershipDisplayValue = "Own";
-                break;
+                return "Own";
 
             default:
-                ownershipDisplayValue = "Unown";
-                break;
+                return "Not available";
         }
-
-        return ownershipDisplayValue;
     }
 
+    public String getCategory() {
+        switch (this.categoryId) {
+            case SELFIMPROVEMENT_PSYCHOLOGY:
+                return "Self-Improvement/Psychology";
 
+            case SOFTWARE_TECHNOLOGY:
+                return "Software Engineering/Technolgy";
 
-    public String displayBookString()
-	{
-		return String.format("Book id: %d, title: %s, author: %s, category: %d, status: %d, ownership: %s.", this.getId(), this.getTitle(), this.getAuthor(), this.getCategoryId(), this.getStatusId(), this.getOwnership(this.ownershipId));
+            case ENGINEERING_PHYSICS:
+                return "Engineering/Physics";
+
+            case FICTION:
+                return "Fiction";
+
+            case ART:
+                return "Art";
+
+            case ROMANCE:
+                return "Romance";
+
+            case HISTORY:
+                return "History";
+
+            case MYSTERY_SPY_DETECTIVE:
+                return "Mystery/Spy/Detective";
+        
+            default:
+                return "Not available";
+        }
+    }
+
+    public String displayBookString() {
+		return String.format("Book id: %d, title: %s, author: %s, category: %s, status: %d, ownership: %s.", this.getId(), this.getTitle(), this.getAuthor(), this.getCategory(), this.getStatusId(), this.getOwnership());
 	}
 }
