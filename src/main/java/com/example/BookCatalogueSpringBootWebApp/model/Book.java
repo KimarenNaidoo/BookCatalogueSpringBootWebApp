@@ -5,19 +5,19 @@ public class Book {
     private long id;
     private String title;
     private int statusId;
-    private int category; // Enums
+    private int categoryId; // Enums
     private String author; // Text seperated by , for multiple authors
-    private int ownership; // Enums
+    private int ownershipId; // Enums
 
     public Book(){}
 
-    public Book(long id, String title, int statusId, int category, String author, int ownership) {
+    public Book(long id, String title, int statusId, int categoryId, String author, int ownershipId) {
         this.id = id; // Make this auto-incrememnt
         this.title = title;
         this.statusId = statusId;
-        this.category = category;
+        this.categoryId = categoryId;
         this.author = author;
-        this.ownership = ownership;
+        this.ownershipId = ownershipId;
     }
 
     public long getId() {
@@ -44,12 +44,12 @@ public class Book {
         this.statusId = statusId;
     }
 
-    public int getCategory() {
-        return category;
+    public int getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory(int category) {
-        this.category = category;
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getAuthor() {
@@ -60,11 +60,11 @@ public class Book {
         this.author = author;
     }
 
-    public int getOwnership() {
-        return ownership;
+    public int getOwnershipId() {
+        return ownershipId;
     }
 
-    public void setOwnership(int ownership) {
-        this.ownership = ownership;
+    public void setOwnershipId(int ownershipId) {
+        this.ownershipId = ownershipId;
     }
 }

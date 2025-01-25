@@ -1,7 +1,6 @@
 package com.example.BookCatalogueSpringBootWebApp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +41,6 @@ public class BookController {
 
 	public String displayBookString(Book book)
 	{
-		return String.format("Book id: %d, title: %s, author: %s, category: %d, status: %d, ownership: %d.", book.getId(), book.getTitle(), book.getAuthor(), book.getCategory(), book.getStatusId(), book.getOwnership());
+		return String.format("Book id: %d, title: %s, author: %s, category: %d, status: %d, ownership: %d.", book.getId(), book.getTitle(), book.getAuthor(), book.getCategoryId(), book.getStatusId(), book.getOwnershipId());
 	}
 }
