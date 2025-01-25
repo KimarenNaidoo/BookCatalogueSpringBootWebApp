@@ -24,7 +24,7 @@ public class BookController {
 		StringBuffer stringBuffer = new StringBuffer();
 		for (Book book : books)
 		{
-			stringBuffer.append(displayBookString(book));
+			stringBuffer.append(book.displayBookString());
 			stringBuffer.append("<br>");
 		}
 
@@ -34,13 +34,10 @@ public class BookController {
 
 	@GetMapping("/{id}")
 	public String getBookById(@PathVariable("id") Long id) {
-		//return bookService.getBookById(id).map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
-		return displayBookString(bookService.getBookById(id).get());
+		Book book = bookService.getBookById(id).get();
+		return book.displayBookString();
 	}
 
 
-	public String displayBookString(Book book)
-	{
-		return String.format("Book id: %d, title: %s, author: %s, category: %d, status: %d, ownership: %d.", book.getId(), book.getTitle(), book.getAuthor(), book.getCategoryId(), book.getStatusId(), book.getOwnershipId());
-	}
+	
 }

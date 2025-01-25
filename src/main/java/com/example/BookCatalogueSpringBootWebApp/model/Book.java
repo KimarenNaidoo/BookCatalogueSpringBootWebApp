@@ -5,9 +5,15 @@ public class Book {
     private long id;
     private String title;
     private int statusId;
-    private int categoryId; // Enums
+    private int categoryId; 
     private String author; // Text seperated by , for multiple authors
-    private int ownershipId; // Enums
+    private int ownershipId;
+
+    // Ownership
+    private final static int UNOWN = 0;
+    private final static int LENT = 1;
+    private final static int BORROWED = 2;
+    private final static int OWN = 3; 
 
     public Book(){}
 
@@ -67,4 +73,41 @@ public class Book {
     public void setOwnershipId(int ownershipId) {
         this.ownershipId = ownershipId;
     }
+
+
+    public String getOwnership(int ownership) {
+
+        String ownershipDisplayValue = "";
+
+        switch (ownership) {
+            case UNOWN:
+                ownershipDisplayValue = "Unown";
+                break;
+
+            case LENT:
+                ownershipDisplayValue = "Lent to...";
+                break;    
+
+            case BORROWED:
+                ownershipDisplayValue = "Borrowed from...";
+                break;
+
+            case OWN:
+                ownershipDisplayValue = "Own";
+                break;
+
+            default:
+                ownershipDisplayValue = "Unown";
+                break;
+        }
+
+        return ownershipDisplayValue;
+    }
+
+
+
+    public String displayBookString()
+	{
+		return String.format("Book id: %d, title: %s, author: %s, category: %d, status: %d, ownership: %s.", this.getId(), this.getTitle(), this.getAuthor(), this.getCategoryId(), this.getStatusId(), this.getOwnership(this.ownershipId));
+	}
 }
