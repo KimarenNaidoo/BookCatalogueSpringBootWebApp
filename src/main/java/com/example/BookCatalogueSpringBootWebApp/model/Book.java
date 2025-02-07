@@ -4,7 +4,7 @@ public class Book {
 
     private long id;
     private String title;
-    private int statusId;
+    private int statusId; // Investigate enums
     private int categoryId; 
     private String author; // Text seperated by , for multiple authors
     private int ownershipId;

@@ -15,8 +15,7 @@ import java.util.List;
 @RequestMapping("/api/books")
 public class BookController {
 
-	@Autowired
-	public BookService bookService;
+	public BookService bookService = new BookService();
 
 	@GetMapping("/")
     public String getAllBooks() {
@@ -29,7 +28,6 @@ public class BookController {
 		}
 
 		return stringBuffer.toString();
-
     }
 
 	@GetMapping("/{id}")
