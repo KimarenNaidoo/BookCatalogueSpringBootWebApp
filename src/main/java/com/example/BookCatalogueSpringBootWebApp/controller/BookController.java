@@ -1,6 +1,5 @@
 package com.example.BookCatalogueSpringBootWebApp.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,8 +14,7 @@ import java.util.List;
 @RequestMapping("/api/books")
 public class BookController {
 
-	@Autowired
-	public BookService bookService;
+	public BookService bookService = new BookService();
 
 	@GetMapping("/")
     public String getAllBooks() {
@@ -29,7 +27,6 @@ public class BookController {
 		}
 
 		return stringBuffer.toString();
-
     }
 
 	@GetMapping("/{id}")
