@@ -5,11 +5,11 @@ import com.example.BookCatalogueSpringBootWebApp.service.BookService;
 import com.example.BookCatalogueSpringBootWebApp.model.Book;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -35,9 +35,18 @@ public class BookServiceTest {
 
         List<Book> actualBooks = bookService.getAllBooks();
         assertEquals(expectedBooks, actualBooks);
-        //verify(bookRepository).loadBooksFromRepository();
     }
 
+    @Test
+    public void testGetBookById() throws Exception {
+        List<Book> expectedBooks = mockBooks();
+        when(bookRepository.loadBooksFromRepository()).thenReturn(expectedBooks);
+
+        Book actualBook = bookService.getBookById(1L).get();
+        Book expectedBook = expectedBooks.stream().filter(b -> b.getId() == 1L).collect(Collectors.toList()).get(0);
+
+        assertEquals(expectedBook, actualBook);
+    }
 
     private List<Book> mockBooks() {
         List<Book> mockBooks = new ArrayList<>();
@@ -46,7 +55,7 @@ public class BookServiceTest {
         Book book2 = new Book(2, "Life 3.0", 2, 1, "Max Tegmark", 3);
 
         mockBooks.add(book1);
-        mockBooks.add(book2);
+        mockBooks.add(book2);  
 
         return mockBooks;
 
