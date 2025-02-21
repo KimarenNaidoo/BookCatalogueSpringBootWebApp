@@ -21,8 +21,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    - name: Clean project with Maven 
+      run: mvn clean
 
-    - name: Build with Maven
+    - name: Build project with Maven
       run: mvn -B package --file pom.xml
 
     - name: Run Tests
