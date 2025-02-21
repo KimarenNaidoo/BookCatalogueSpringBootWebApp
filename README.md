@@ -1,6 +1,18 @@
 # BookCatalogSpringBootWebApp
-Basic CI/CD Pipeline project using Java and Spring Boot
+- Basic CI/CD Pipeline project using Java and Spring Boot REST API application.
+- The goal of this application is to get hands-on experience with DevOps while creating a way to keep track of the books I consume.
+- This application will allow me to keep track of books I have read, or want to read, their status, category, authors, and ownership.
 
-### Testing
+### Database
+
+### Testing with JUnit
 - Using JUnit for testing since it works well with maven.
 - ```mvn test```
+
+### Continuous Integration with Github Actions
+
+### AWS Infrastructure
+
+### Continuous Deployment
+
+
