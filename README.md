@@ -6,6 +6,8 @@
 ### Database
 
 ### Testing with JUnit
+- Using JUnit for testing since it works well with maven.
+- ```mvn test```
 
 ### Continuous Integration with Github Actions
 

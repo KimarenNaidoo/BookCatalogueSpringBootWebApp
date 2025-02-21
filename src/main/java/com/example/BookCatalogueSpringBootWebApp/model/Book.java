@@ -1,10 +1,12 @@
 package com.example.BookCatalogueSpringBootWebApp.model;
 
-public class Book {
+import java.util.Objects;
+
+public class Book implements Comparable<Book> {
 
     private long id;
     private String title;
-    private int statusId;
+    private int statusId; // Investigate enums
     private int categoryId; 
     private String author; // Text seperated by , for multiple authors
     private int ownershipId;
@@ -159,4 +161,18 @@ public class Book {
     public String displayBookString() {
 		return String.format("<h3>Book Id: %d</h3> <ul><li>Title: %s.</li> <li>Author: %s.</li> <li>Category: %s.</li> <li>Status: %s.</li> <li>Ownership: %s.</li></ul>", this.getId(), this.getTitle(), this.getAuthor(), this.getCategory(), this.getStatus(), this.getOwnership());
 	}
+
+    @Override
+    public int compareTo(Book o) {
+        return 1;// update after implementing ISBN
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Book book = (Book) obj;
+        return Objects.equals(id, book.id) && Objects.equals(title, book.title);
+    }
 }
