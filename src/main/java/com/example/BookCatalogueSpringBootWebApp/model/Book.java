@@ -6,25 +6,10 @@ public class Book implements Comparable<Book> {
 
     private long id;
     private String title;
-    private int statusId; // Investigate enums
+    private int statusId;
     private int categoryId; 
     private String author; // Text seperated by , for multiple authors
     private int ownershipId;
-
-    // Status
-    private final static int NOT_STARTED = 0;
-    private final static int READING = 1;
-    private final static int FINISHED = 2;
-
-    // Category
-    private final static int SELFIMPROVEMENT_PSYCHOLOGY = 0;
-    private final static int SOFTWARE_TECHNOLOGY = 1;
-    private final static int ENGINEERING_PHYSICS = 2;
-    private final static int FICTION = 3;
-    private final static int ART = 4;
-    private final static int ROMANCE = 5;
-    private final static int HISTORY = 6;
-    private final static int MYSTERY_SPY_DETECTIVE = 7;
 
     // Ownership
     private final static int UNOWN = 0;
@@ -112,50 +97,13 @@ public class Book implements Comparable<Book> {
     }
 
     public String getCategory() {
-        switch (this.categoryId) {
-            case SELFIMPROVEMENT_PSYCHOLOGY:
-                return "Self-Improvement/Psychology";
-
-            case SOFTWARE_TECHNOLOGY:
-                return "Software Engineering/Technolgy";
-
-            case ENGINEERING_PHYSICS:
-                return "Engineering/Physics";
-
-            case FICTION:
-                return "Fiction";
-
-            case ART:
-                return "Art";
-
-            case ROMANCE:
-                return "Romance";
-
-            case HISTORY:
-                return "History";
-
-            case MYSTERY_SPY_DETECTIVE:
-                return "Mystery/Spy/Detective";
-        
-            default:
-                return "N/A";
-        }
+        BookCategory bookCategory = BookCategory.getBookCategory(this.categoryId);
+        return bookCategory != null ? bookCategory.getCategoryDisplayValue() : "N/A";
     }
 
     public String getStatus() {
-        switch (this.statusId) {
-            case NOT_STARTED:
-                return "Not Started";
-            
-            case READING:
-                return "Reading";
-
-            case FINISHED:
-                return "Finished";
-        
-            default:
-                return "N/A";
-        }
+        BookStatus bookStatus = BookStatus.getBookStatus(this.statusId);
+        return bookStatus != null ? bookStatus.getStatusDisplayValue() : "N/A";
     }
 
     public String displayBookString() {
