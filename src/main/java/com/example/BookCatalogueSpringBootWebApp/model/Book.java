@@ -11,12 +11,6 @@ public class Book implements Comparable<Book> {
     private String author; // Text seperated by , for multiple authors
     private int ownershipId;
 
-    // Ownership
-    private final static int UNOWN = 0;
-    private final static int LENT = 1;
-    private final static int BORROWED = 2;
-    private final static int OWN = 3; 
-
     public Book(){}
 
     public Book(long id, String title, int statusId, int categoryId, String author, int ownershipId) {
@@ -76,26 +70,6 @@ public class Book implements Comparable<Book> {
         this.ownershipId = ownershipId;
     }
 
-
-    public String getOwnership() {
-        switch (this.ownershipId) {
-            case UNOWN:
-                return "Unown";
-
-            case LENT:
-                return "Lent To...";    
-
-            case BORROWED:
-                return "Borrowed From...";
-
-            case OWN:
-                return "Own";
-
-            default:
-                return "N/A";
-        }
-    }
-
     public String getCategory() {
         BookCategory bookCategory = BookCategory.getBookCategory(this.categoryId);
         return bookCategory != null ? bookCategory.getCategoryDisplayValue() : "N/A";
@@ -104,6 +78,11 @@ public class Book implements Comparable<Book> {
     public String getStatus() {
         BookStatus bookStatus = BookStatus.getBookStatus(this.statusId);
         return bookStatus != null ? bookStatus.getStatusDisplayValue() : "N/A";
+    }
+
+    public String getOwnership() {
+        BookOwnership bookOwnership = BookOwnership.getBookOwnership(this.ownershipId);
+        return bookOwnership != null ? bookOwnership.getOwnershipDisplayValue() : "N/A";
     }
 
     public String displayBookString() {
