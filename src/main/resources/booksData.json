@@ -6,7 +6,8 @@
             "statusId": "2",
             "categoryId": "3",
             "author": "Paulo Coelho",
-            "ownershipId": "0"
+            "ownershipId": "0",
+            "createDate": "2023-01-01"
         },
         {
             "id": "2",
@@ -14,7 +15,8 @@
             "statusId": "2",
             "categoryId": "1",
             "author": "Max Tegmark",
-            "ownershipId": "3"
+            "ownershipId": "3",
+            "createDate": "2024-05-29"
         }
     ]
 }
