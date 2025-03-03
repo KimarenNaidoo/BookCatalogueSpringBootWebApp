@@ -1,6 +1,9 @@
 package com.example.BookCatalogueSpringBootWebApp.model;
 
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
 
 public class Book implements Comparable<Book> {
 
@@ -11,15 +14,19 @@ public class Book implements Comparable<Book> {
     private String author; // Text seperated by , for multiple authors
     private int ownershipId;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate createDate;
+
     public Book(){}
 
-    public Book(long id, String title, int statusId, int categoryId, String author, int ownershipId) {
+    public Book(long id, String title, int statusId, int categoryId, String author, int ownershipId, LocalDate createDate) {
         this.id = id; // Make this auto-incrememnt
         this.title = title;
         this.statusId = statusId;
         this.categoryId = categoryId;
         this.author = author;
         this.ownershipId = ownershipId;
+        this.createDate = createDate;
     }
 
     public long getId() {
@@ -70,6 +77,14 @@ public class Book implements Comparable<Book> {
         this.ownershipId = ownershipId;
     }
 
+    public LocalDate getCreateDate() { 
+        return createDate; 
+    }
+
+    public void setCreateDate(LocalDate createDate) {
+        this.createDate = createDate;
+    }
+
     public String getCategory() {
         BookCategory bookCategory = BookCategory.getBookCategory(this.categoryId);
         return bookCategory != null ? bookCategory.getCategoryDisplayValue() : "N/A";
@@ -85,8 +100,13 @@ public class Book implements Comparable<Book> {
         return bookOwnership != null ? bookOwnership.getOwnershipDisplayValue() : "N/A";
     }
 
+    public String getFormattedCreateDate() {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return this.createDate.format(dateTimeFormatter);
+    }
+
     public String displayBookString() {
-		return String.format("<h3>Book Id: %d</h3> <ul><li>Title: %s.</li> <li>Author: %s.</li> <li>Category: %s.</li> <li>Status: %s.</li> <li>Ownership: %s.</li></ul>", this.getId(), this.getTitle(), this.getAuthor(), this.getCategory(), this.getStatus(), this.getOwnership());
+		return String.format("<h3>Book Id: %d</h3> <ul><li>Title: %s.</li> <li>Author: %s.</li> <li>Category: %s.</li> <li>Status: %s.</li> <li>Ownership: %s.</li> <li>Create Date: %s.</li></ul>", this.getId(), this.getTitle(), this.getAuthor(), this.getCategory(), this.getStatus(), this.getOwnership(), this.getFormattedCreateDate());
 	}
 
     @Override
