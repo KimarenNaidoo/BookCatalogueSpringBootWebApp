@@ -7,6 +7,7 @@
             "categoryId": "3",
             "author": "Paulo Coelho",
             "ownershipId": "0",
+            "isbn": "978-0-14-310565-5",
             "createDate": "2023-01-01"
         },
         {
@@ -16,6 +17,7 @@
             "categoryId": "1",
             "author": "Max Tegmark",
             "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
             "createDate": "2024-05-29"
         }
     ]
