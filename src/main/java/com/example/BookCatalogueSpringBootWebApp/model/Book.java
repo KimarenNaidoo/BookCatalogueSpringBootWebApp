@@ -11,7 +11,7 @@ public class Book implements Comparable<Book> {
     private String title;
     private int statusId;
     private int categoryId; 
-    private String author; // Text sepeated by , for multiple authors
+    private String author; // Text seperated by , for multiple authors
     private int ownershipId;
     private String isbn;
 
