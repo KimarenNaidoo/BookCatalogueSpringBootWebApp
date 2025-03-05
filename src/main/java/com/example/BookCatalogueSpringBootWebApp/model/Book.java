@@ -11,21 +11,23 @@ public class Book implements Comparable<Book> {
     private String title;
     private int statusId;
     private int categoryId; 
-    private String author; // Text seperated by , for multiple authors
+    private String author; // Text sepeated by , for multiple authors
     private int ownershipId;
+    private String isbn;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate createDate;
 
     public Book(){}
 
-    public Book(long id, String title, int statusId, int categoryId, String author, int ownershipId, LocalDate createDate) {
+    public Book(long id, String title, int statusId, int categoryId, String author, int ownershipId, String isbn, LocalDate createDate) {
         this.id = id; // Make this auto-incrememnt
         this.title = title;
         this.statusId = statusId;
         this.categoryId = categoryId;
         this.author = author;
         this.ownershipId = ownershipId;
+        this.isbn = isbn;
         this.createDate = createDate;
     }
 
@@ -77,6 +79,14 @@ public class Book implements Comparable<Book> {
         this.ownershipId = ownershipId;
     }
 
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
     public LocalDate getCreateDate() { 
         return createDate; 
     }
@@ -106,7 +116,7 @@ public class Book implements Comparable<Book> {
     }
 
     public String displayBookString() {
-		return String.format("<h3>Book Id: %d</h3> <ul><li>Title: %s.</li> <li>Author: %s.</li> <li>Category: %s.</li> <li>Status: %s.</li> <li>Ownership: %s.</li> <li>Create Date: %s.</li></ul>", this.getId(), this.getTitle(), this.getAuthor(), this.getCategory(), this.getStatus(), this.getOwnership(), this.getFormattedCreateDate());
+		return String.format("<h3>Book Id: %d</h3> <ul><li>Title: %s.</li> <li>Author: %s.</li> <li>Category: %s.</li> <li>Status: %s.</li> <li>Ownership: %s.</li> <li>ISBN: %s.</li> <li>Create Date: %s.</li></ul>", this.getId(), this.getTitle(), this.getAuthor(), this.getCategory(), this.getStatus(), this.getOwnership(), this.getIsbn(), this.getFormattedCreateDate());
 	}
 
     @Override

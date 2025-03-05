@@ -52,8 +52,8 @@ public class BookServiceTest {
     private List<Book> mockBooks() {
         List<Book> mockBooks = new ArrayList<>();
 
-        Book book1 = new Book(1, "The Alchemist", 2, 3, "Paulo Coelho", 0, LocalDate.of(2023, 01, 01));
-        Book book2 = new Book(2, "Life 3.0", 2, 1, "Max Tegmark", 3, LocalDate.of(2024, 05, 29));
+        Book book1 = new Book(1, "The Alchemist", 2, 3, "Paulo Coelho", 0, "978-0-14-310565-5", LocalDate.of(2023, 01, 01));
+        Book book2 = new Book(2, "Life 3.0", 2, 1, "Max Tegmark", 3, "978-0-14-310565-5", LocalDate.of(2024, 05, 29));
 
         mockBooks.add(book1);
         mockBooks.add(book2);  
