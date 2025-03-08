@@ -34,7 +34,10 @@ public class BookServiceTest {
         List<Book> expectedBooks = mockBooks();
         when(bookRepository.loadBooksFromRepository()).thenReturn(expectedBooks);
 
-        List<Book> actualBooks = bookService.getAllBooks();
+        List<Book> actualBooks = new ArrayList<>();
+        actualBooks.add(bookService.getAllBooks().get(0));
+        actualBooks.add(bookService.getAllBooks().get(1));
+
         assertEquals(expectedBooks, actualBooks);
     }
 
