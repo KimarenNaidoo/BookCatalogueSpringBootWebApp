@@ -19,6 +19,136 @@
             "ownershipId": "3",
             "isbn": "978-0-14-310565-5",
             "createDate": "2024-05-29"
+        },
+        {
+            "id": "3",
+            "title": "Mind Power",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "John Kehoe",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "4",
+            "title": "Atomic Habits",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "James Clear",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "5",
+            "title": "Lives of the Stoics",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Ryan Holiday",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "6",
+            "title": "The 48 Laws of Power",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Robert Greene",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "7",
+            "title": "Deep Work",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Cal Newport",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "8",
+            "title": "12 Rules For Life: An Antidote To Chaos",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Jordan B. Peterson",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "9",
+            "title": "Meditations",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Gregory Hayes",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "10",
+            "title": "The 4-Hour Workweek",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Tim Ferriss",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "11",
+            "title": "The 7 Habits of Highly Effective People",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Stephen Covey",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "12",
+            "title": "The Wim Hof Method: Activate Your Full Human Potential",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Wim Hof",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "13",
+            "title": "The Power of Habit",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Charles Duhigg",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "14",
+            "title": "Be Water, My Friend: The Teachings of Bruce Lee",
+            "statusId": "2",
+            "categoryId": "1",
+            "author": "Shannon Lee",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
+        },
+        {
+            "id": "15",
+            "title": "The Hobbit",
+            "statusId": "2",
+            "categoryId": "3",
+            "author": "J. R. R. Tolkien",
+            "ownershipId": "3",
+            "isbn": "978-0-14-310565-5",
+            "createDate": "2024-05-29"
         }
     ]
 }
