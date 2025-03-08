@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.BookCatalogueSpringBootWebApp.service.BookService;	
+import com.example.BookCatalogueSpringBootWebApp.service.BookService;
+import com.example.BookCatalogueSpringBootWebApp.util.BookUtil;
 import com.example.BookCatalogueSpringBootWebApp.model.Book;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class BookController {
 		StringBuffer stringBuffer = new StringBuffer();
 		for (Book book : books)
 		{
-			stringBuffer.append(book.displayBookString());
+			stringBuffer.append(new BookUtil(book).displayBookString());
 			stringBuffer.append("<br>");
 		}
 
@@ -33,7 +34,7 @@ public class BookController {
 	public String getBookById(@PathVariable("id") Long id) {
 		try {
 			Book book = bookService.getBookById(id).get();
-			return book.displayBookString();
+			return new BookUtil(book).displayBookString();
 		} catch(Exception e) {
 			return "Error: Unable to resolve Book entry with Id: " + id;
 		}
