@@ -31,8 +31,13 @@ public class BookController {
 
 	@GetMapping("/{id}")
 	public String getBookById(@PathVariable("id") Long id) {
-		Book book = bookService.getBookById(id).get();
-		return book.displayBookString();
+		try {
+			Book book = bookService.getBookById(id).get();
+			return book.displayBookString();
+		} catch(Exception e) {
+			return "Error: Unable to resolve Book entry with Id: " + id;
+		}
+		
 	}
 
 }
