@@ -2,7 +2,6 @@ package com.example.BookCatalogueSpringBootWebApp.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 
 public class Book implements Comparable<Book> {
@@ -95,33 +94,9 @@ public class Book implements Comparable<Book> {
         this.createDate = createDate;
     }
 
-    public String getCategory() {
-        BookCategory bookCategory = BookCategory.getBookCategory(this.categoryId);
-        return bookCategory != null ? bookCategory.getCategoryDisplayValue() : "N/A";
-    }
-
-    public String getStatus() {
-        BookStatus bookStatus = BookStatus.getBookStatus(this.statusId);
-        return bookStatus != null ? bookStatus.getStatusDisplayValue() : "N/A";
-    }
-
-    public String getOwnership() {
-        BookOwnership bookOwnership = BookOwnership.getBookOwnership(this.ownershipId);
-        return bookOwnership != null ? bookOwnership.getOwnershipDisplayValue() : "N/A";
-    }
-
-    public String getFormattedCreateDate() {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        return this.createDate.format(dateTimeFormatter);
-    }
-
-    public String displayBookString() {
-		return String.format("<h3>Book Id: %d</h3> <ul><li>Title: %s.</li> <li>Author: %s.</li> <li>Category: %s.</li> <li>Status: %s.</li> <li>Ownership: %s.</li> <li>ISBN: %s.</li> <li>Create Date: %s.</li></ul>", this.getId(), this.getTitle(), this.getAuthor(), this.getCategory(), this.getStatus(), this.getOwnership(), this.getIsbn(), this.getFormattedCreateDate());
-	}
-
     @Override
     public int compareTo(Book o) {
-        return 1;// update after implementing ISBN
+        return this.isbn.compareTo(o.isbn);
     }
 
     @Override
@@ -130,6 +105,6 @@ public class Book implements Comparable<Book> {
         if (obj == null || getClass() != obj.getClass()) return false;
 
         Book book = (Book) obj;
-        return Objects.equals(id, book.id) && Objects.equals(title, book.title);
+        return Objects.equals(this.id, book.id) && Objects.equals(this.title, book.title) && Objects.equals(this.isbn, book.isbn);
     }
 }
