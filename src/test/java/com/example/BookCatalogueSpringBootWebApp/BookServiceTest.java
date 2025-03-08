@@ -5,11 +5,13 @@ import com.example.BookCatalogueSpringBootWebApp.service.BookService;
 import com.example.BookCatalogueSpringBootWebApp.model.Book;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.Test;
@@ -42,7 +44,7 @@ public class BookServiceTest {
     }
 
     @Test
-    public void testGetBookById() throws Exception {
+    public void testGetBookById_Success() throws Exception {
         List<Book> expectedBooks = mockBooks();
         when(bookRepository.loadBooksFromRepository()).thenReturn(expectedBooks);
 
@@ -50,6 +52,14 @@ public class BookServiceTest {
         Book expectedBook = expectedBooks.stream().filter(b -> b.getId() == 1L).collect(Collectors.toList()).get(0);
 
         assertEquals(expectedBook, actualBook);
+    }
+
+    @Test
+    public void testGetBookById_NotFound() throws Exception {
+        
+        assertThrows(NoSuchElementException.class, () -> {
+            bookService.getBookById(1000L).get();
+        });
     }
 
     private List<Book> mockBooks() {
