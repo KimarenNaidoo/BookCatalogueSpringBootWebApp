@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class FrontEndController {
 
-    @GetMapping(value = {"/**/{path:[^\\.]*}"})
-    public String forward() {
+    @GetMapping("/")
+    public String home() {
         return "forward:/index.html";
     }
-    
 }
